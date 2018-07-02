@@ -1,5 +1,5 @@
 /*
-  mgPlayer v0.1
+  mgPlayer v0.1 by 4wekromi (march 2017)
 */
 #include <stdio.h>
 #include <conio.h>
