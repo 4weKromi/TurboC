@@ -39,22 +39,21 @@ int getFq()
 {
 	int inKey=0;
 	int j=0;
-		while(j!=73){
-			if(keyCh[0]==keyN[j][0]){
-				if(keyCh[1]==keyN[j][1]){
-					if(keyCh[2]==keyN[j][2]){
-						inKey=j;
-						break;
-					}
-					else{
-						inKey=j;
-						j++;
-					}
+	while(j!=73){
+		if(keyCh[0]==keyN[j][0]){
+			if(keyCh[1]==keyN[j][1]){
+				if(keyCh[2]==keyN[j][2]){
+					inKey=j;
+					break;
 				}
 				else{
+					inKey=j;
 					j++;
+					}
 				}
-			}
+				else
+				   j++;
+				}
 			else{
 				j++;
 				inKey=73;
