@@ -16,6 +16,6 @@
 
 
 ### example:
-*c4@150& C scale*d4@150&
-you can add information between keys*e4@150&
-*f4@150&text here are ignored*g4@150&*a4@150&*b4@150&*c3@150&
+*c4@350& C scale*d4@350&
+you can add information between keys*e4@350&
+*f4@350&text here are ignored*g4@350&*a4@350&*b4@350&*c3@350&
