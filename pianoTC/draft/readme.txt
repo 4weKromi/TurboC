@@ -1,5 +1,6 @@
 
-## Things to remember:
+
+## Things to remember when writing draft(txt)
 
 ### Syntax:
 
