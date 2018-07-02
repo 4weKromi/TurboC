@@ -1,7 +1,6 @@
 /*
   mgPlayer v0.1 by 4wekromi (march 2017)
   -plays music.mg files
-  -change
 */
 #include <stdio.h>
 #include <conio.h>
