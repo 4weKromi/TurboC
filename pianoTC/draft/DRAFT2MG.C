@@ -1,5 +1,7 @@
 /*
 	draft2mg v0.1 by 4wekromi (march 2017)
+	-Convert keys to standard frequencies
+	-Convert draft.txt to music.mg
 */
 #include <stdio.h>
 #include <conio.h>
@@ -37,30 +39,23 @@ int getFq()
 {
 	int inKey=0;
 	int j=0;
-		while(j!=73)
-		{
-			if(keyCh[0]==keyN[j][0])
-			{
-				if(keyCh[1]==keyN[j][1])
-				{
-					if(keyCh[2]==keyN[j][2])
-					{
+		while(j!=73){
+			if(keyCh[0]==keyN[j][0]){
+				if(keyCh[1]==keyN[j][1]){
+					if(keyCh[2]==keyN[j][2]){
 						inKey=j;
 						break;
 					}
-					else
-					{
+					else{
 						inKey=j;
 						j++;
 					}
 				}
-				else
-				{
+				else{
 					j++;
 				}
 			}
-			else
-			{
+			else{
 				j++;
 				inKey=73;
 			}
@@ -78,14 +73,11 @@ int buffer(int flag, char in)
 		i = 0;
 	else if (in == '@')
 		i = 0;
-
-	if (flag == 1 && in != '*')
-	{
+	if (flag == 1 && in != '*'){
 		keyCh[i] = in;
 		i++;
 	}
-	else if (flag == 2 && in != '@')
-	{
+	else if (flag == 2 && in != '@'){
 		keyDe[i] = in;
 		i++;
 	}
@@ -94,8 +86,7 @@ int buffer(int flag, char in)
 		mk.keyD=atoi(keyDe);
 		getFq();
 		fwrite(&mk,sizeof(mk),1,ptr);
-		for(x=0;x<5;x++)
-		{
+		for(x=0;x<5;x++){
 			keyCh[x]='\0';
 			keyDe[x]='\0';
 		}
@@ -120,33 +111,24 @@ int main()
 	gets(temp);
 	sprintf(outFile,"%s.mg",temp);
 	fp=fopen(outFile,"r");
-	if(fp!=NULL)
-	{
+	if(fp!=NULL){
 		remove(outFile);
 		printf(" removed existing file %s",outFile);
 	}
 	ptr2=fopen(inFile,"r");
-	if(ptr2==NULL)
-	{
+	if(ptr2==NULL){
 		printf("\n Error : %s not found ",inFile);
 		getch();
 		exit(1);
 	}
-	while (!feof(ptr2))
-	{
+	while (!feof(ptr2)){
 			ch = getc(ptr2);
 			if (ch == '*')
-			{
-			flag = 1;
-			}
+				flag = 1;
 			else if (ch == '@')
-			{
-			flag = 2;
-			}
+				flag = 2;
 			else if (ch == '&')
-			{
 				flag = 3;
-			}
 			buffer(flag, ch);
 	}
 	printf("\n..Done");
