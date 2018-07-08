@@ -6,7 +6,7 @@
 
 *Keys between c1 to c7 (6 octaves)
 
-*Keys are separate with '*' and '#'
+*Keys are separate with '*' and '@'
 
 *Delay are separate with '@' and '&'
 
