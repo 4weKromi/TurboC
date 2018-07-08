@@ -35,8 +35,7 @@ struct mdata
 	float keyD;
 } mk;
 
-int getFq()
-{
+int getFq(){
 	int inKey=0;
 	int j=0;
 	while(j!=73){
@@ -63,8 +62,7 @@ int getFq()
 	return 0;
 }
 
-int buffer(int flag, char in)
-{
+int buffer(int flag, char in){
 	static int i;
 	int x;
 	FILE *ptr=fopen(outFile,"ab");
@@ -94,8 +92,7 @@ int buffer(int flag, char in)
 	return 0;
 }
 
-int main()
-{
+int main(){
 	char ch;
 	char temp[32];
 	int flag;
