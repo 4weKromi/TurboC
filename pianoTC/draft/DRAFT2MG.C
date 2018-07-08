@@ -46,18 +46,18 @@ int getFq(){
 					break;
 				}
 				else{
-					inKey=j;
-					j++;
-					}
-				}
-				else
-				   j++;
-				}
-			else{
+				inKey=j;
 				j++;
-				inKey=73;
+				}
 			}
+			else
+			j++;
+			}
+		else{
+		j++;
+		inKey=73;
 		}
+	}
 	mk.keyF=keyFreq[inKey];
 	return 0;
 }
