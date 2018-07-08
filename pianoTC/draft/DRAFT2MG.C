@@ -52,7 +52,7 @@ int getFq(){
 			}
 			else
 			j++;
-			}
+		}
 		else{
 		j++;
 		inKey=73;
