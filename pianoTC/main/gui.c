@@ -2,7 +2,6 @@
 /*
 	Graphical modules
 */
-
 #include "GLOBAL.H"
 
 /*piano key position on keyboard*/
@@ -10,13 +9,11 @@ char keyPos[]={"135680=qetyip]adghk;"};
 char keyPos2[]={"2479-wruo[sfjl"};
 
 /* initiate graph */
-int testGraph()
-{
+int testGraph(){
 	int gdriver = DETECT, gmode, errorcode;
 	initgraph(&gdriver, &gmode, "");
 	errorcode = graphresult();
-	if(errorcode != grOk)
-	{
+	if(errorcode != grOk){
 		printf("Graphics error: %s\n", grapherrormsg(errorcode));
 		printf("Press any key to Quit:");
 		getch();
@@ -26,8 +23,7 @@ int testGraph()
 }
 
 /* Reload after Playing/Deleting */
-int pReload()
-{
+int pReload(){
 	cleardevice();
 	drawMenuTab();
 	drawSecondTab();
@@ -35,8 +31,7 @@ int pReload()
 	return 0;
 }
 /* Dialog Box*/
-int dialogBox()
-{
+int dialogBox(){
 	setfillstyle(SOLID_FILL,DARKGRAY);
 	bar(205,155,405,255); //Shadow
 
@@ -49,8 +44,7 @@ int dialogBox()
 }
 
 /* Display Introduction */
-int introBox()
-{
+int introBox(){
 	setfillstyle(SOLID_FILL,LIGHTGRAY);
 	bar(210,150,430,330);
 	setfillstyle(SOLID_FILL,WHITE);
@@ -73,8 +67,7 @@ int introBox()
 }
 
 /* Draw tab for mouse*/
-int drawMenuTab()
-{
+int drawMenuTab(){
 	setfillstyle(SOLID_FILL, LIGHTGRAY);	// canvas
 	bar(0,20,getmaxx(),getmaxy()-20);
 
@@ -103,8 +96,7 @@ int drawMenuTab()
 }
 
 /* first tab / play tab */
-void drawFirstTab()
-{
+void drawFirstTab(){
 	int top=325,bot=425;
 	int i,j=50;
 	char ch[1];
@@ -118,18 +110,14 @@ void drawFirstTab()
 	bar(15,300,625,430);
 
 	setfillstyle(SOLID_FILL,WHITE);
-	for(i=22;i<=592;i+=30)
-	{
+	for(i=22;i<=592;i+=30){
 		bar(i,top,j,bot);
 		j+=30;
-
 	}
 	setfillstyle(SOLID_FILL,DARKGRAY);
 	j=60;
-	for(i=40;i<=580;i+=30)
-	{
-		if(j==120||j==240||j==330||j==450||j==540)
-		{
+	for(i=40;i<=580;i+=30){
+		if(j==120||j==240||j==330||j==450||j==540){
 			j+=30;
 			continue;
 		}
@@ -138,19 +126,15 @@ void drawFirstTab()
 	}
 	setcolor(RED);
 	j=30;
-	for(i=0;i<20;i++)
-	{
+	for(i=0;i<20;i++){
 		sprintf(ch,"%c",keyPos[i]);
 		outtextxy(j,410,ch);
 		j+=30;
 	}
 	i=0;
-	for(j=45;j<=585;j+=30)
-	{
+	for(j=45;j<=585;j+=30){
 		if(j==105||j==225||j==315||j==435||j==525)
-		{
 			continue;
-		}
 		sprintf(ch,"%c",keyPos2[i]);
 		outtextxy(j,350,ch);
 		i++;
@@ -159,8 +143,7 @@ void drawFirstTab()
 }
 
 /* Second Tab / open tab*/
-void drawSecondTab()
-{
+void drawSecondTab(){
 	setcolor(WHITE);
 	rectangle(132,37,218,68);  //tab selection
 
@@ -213,12 +196,10 @@ void drawSecondTab()
 	outtextxy(535,262,"Delete");
 	outtextxy(535,312,"Delete");
 	outtextxy(535,362,"Delete");
-
 }
 
 /* Third tab / about tab*/
-void drawThirdTab()
-{
+void drawThirdTab(){
 	setcolor(WHITE);
 	rectangle(242,37,328,68);
 
@@ -238,8 +219,7 @@ void drawThirdTab()
 }
 
 /* Quit dialog box for mouse*/
-int quitDialog()
-{
+int quitDialog(){
 	setcolor(WHITE);
 	rectangle(522,37,598,68);
 	dialogBox();
@@ -258,6 +238,5 @@ int quitDialog()
 	setfillstyle(SOLID_FILL,RED);
 	bar(220,208,280,228);
 	outtextxy(230,215,"Y E S");
-
 	return 0;
 }
